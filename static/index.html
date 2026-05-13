@@ -61,7 +61,8 @@ a{color:inherit;text-decoration:none}
 .logo small{display:block;color:var(--ink-sub);font-size:1rem;font-weight:500;margin-top:1px}
 .cta-orange{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--orange);color:#fff !important;font-weight:700;font-size:1.4rem;padding:11px 22px;border-radius:100px;box-shadow:0 4px 14px rgba(255,107,0,0.35);transition:all 0.2s ease;border:none;cursor:pointer;white-space:nowrap}
 .cta-orange:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,107,0,0.45)}
-.cta-orange.large{font-size:1.6rem;padding:18px 44px}
+.cta-orange.large{font-size:1.8rem;padding:24px 72px;min-width:320px}
+@media (max-width:559px){.cta-orange.large{font-size:1.5rem;padding:16px 40px;min-width:0;width:100%;max-width:340px}}
 .cta-orange .arrow{font-family:"Inter",sans-serif}
 @media (max-width:559px){
   .logo{font-size:1.3rem}
@@ -249,6 +250,9 @@ a{color:inherit;text-decoration:none}
 .footer{background:#1a1a1a;color:#A8B0BC;padding:32px 24px;text-align:center;font-size:1.2rem;line-height:1.8}
 .footer .name{color:#fff;font-weight:700;font-size:1.35rem;margin:0 0 6px}
 .footer a{color:#A8B0BC;text-decoration:underline}
+.footer .sep{margin:0 8px;opacity:0.5}
+.footer .ft-detail{color:#6B7280;font-size:1.1rem;text-decoration:none;opacity:0.7}
+.footer .ft-detail:hover{opacity:1;text-decoration:underline}
 
 /* Floating CTA on mobile */
 .floating-cta{display:none}
@@ -534,7 +538,7 @@ a{color:inherit;text-decoration:none}
 <!-- Footer -->
 <footer class="footer">
   <p class="name">ホームページ内製化くん</p>
-  <p>運営：<a href="https://my-career.co.jp/" target="_blank" rel="noopener">マイキャリア株式会社</a></p>
+  <p>運営：<a href="https://my-career.co.jp/" target="_blank" rel="noopener">マイキャリア株式会社</a><span class="sep">｜</span><a href="./detail/" class="ft-detail">プラン詳細</a></p>
   <p>© 2026 マイキャリア株式会社 All rights reserved.</p>
 </footer>
 
