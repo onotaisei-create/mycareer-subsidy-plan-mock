@@ -117,24 +117,28 @@ a{color:inherit;text-decoration:none}
 }
 
 /* ========== Comparison ========== */
-.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
-.compare-col{background:#fff;border-radius:20px;padding:0;overflow:hidden;border:1px solid var(--line)}
-.compare-col.bad .compare-head{background:#F3F4F6;color:var(--ink-sub)}
-.compare-col.good{border:2px solid var(--primary);transform:translateY(-8px);box-shadow:0 12px 32px rgba(0,145,224,0.18)}
-.compare-col.good .compare-head{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%);color:#fff}
-.compare-head{padding:24px;text-align:center;font-size:2rem;font-weight:800}
-.compare-head .badge{display:inline-block;background:#fff;color:var(--primary);font-size:1.1rem;padding:3px 10px;border-radius:100px;margin-bottom:8px;font-weight:700}
-.compare-body{padding:32px 28px;display:flex;flex-direction:column;gap:20px}
-.compare-row{padding-bottom:20px;border-bottom:1px dashed var(--line)}
-.compare-row:last-child{border-bottom:none;padding-bottom:0}
-.compare-row .key{font-size:1.3rem;color:var(--ink-sub);font-weight:600;margin:0 0 6px;letter-spacing:0.04em}
-.compare-row .val{font-size:2.2rem;font-weight:800;line-height:1.4}
-.compare-col.good .compare-row .val{color:var(--primary)}
-.compare-row .val .sub{display:block;font-size:1.3rem;color:var(--ink-sub);font-weight:500;margin-top:4px}
-.compare-col.bad .compare-row .val{color:var(--ink)}
+.compare-table{background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 12px 32px rgba(0,145,224,0.06);margin-top:32px}
+.ct-row{display:grid;grid-template-columns:160px 1fr 1fr;border-bottom:1px solid var(--line)}
+.ct-row:last-child{border-bottom:none}
+.ct-row > *{padding:24px;display:flex;flex-direction:column;justify-content:center;line-height:1.4}
+.ct-key{background:#F7F9FC;font-size:1.3rem;font-weight:700;color:var(--ink-sub);letter-spacing:0.04em}
+.ct-bad,.ct-good{font-size:2.2rem;font-weight:800}
+.ct-bad{color:var(--ink);background:#fff}
+.ct-good{color:var(--primary);background:#F5FAFD;border-left:2px solid var(--primary-light)}
+.ct-bad .sub,.ct-good .sub{display:block;font-size:1.3rem;font-weight:500;color:var(--ink-sub);margin-top:6px;line-height:1.7}
+.ct-good .sub{color:#6996B5}
+.ct-head .ct-key{background:#F3F4F6}
+.ct-head .ct-bad-head,.ct-head .ct-good-head{padding:28px 24px;font-size:1.8rem;font-weight:800;text-align:center;align-items:center;justify-content:center}
+.ct-head .ct-bad-head{background:#F3F4F6;color:var(--ink-sub)}
+.ct-head .ct-good-head{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%);color:#fff;gap:8px;border-left:none}
+.ct-head .rec{display:inline-block;background:#fff;color:var(--primary);font-size:1.1rem;padding:3px 12px;border-radius:100px;font-weight:700;letter-spacing:0.08em}
 @media (max-width:768px){
-  .compare-grid{grid-template-columns:1fr}
-  .compare-col.good{transform:none}
+  .ct-row{grid-template-columns:1fr 1fr;gap:0}
+  .ct-key{grid-column:1 / -1;padding:14px 20px 4px;background:transparent;font-size:1.2rem}
+  .ct-head .ct-key{display:none}
+  .ct-head .ct-bad-head,.ct-head .ct-good-head{padding:20px 12px;font-size:1.4rem}
+  .ct-bad,.ct-good{font-size:1.7rem;padding:8px 20px 18px}
+  .ct-bad .sub,.ct-good .sub{font-size:1.2rem}
 }
 
 /* ========== Subsidy Impact ========== */
@@ -321,51 +325,34 @@ a{color:inherit;text-decoration:none}
       <span class="eng">Comparison</span>
       <h2>外注 vs 内製化、<br>どっちが<mark>本当にお得</mark>？</h2>
     </div>
-    <div class="compare-grid">
-      <div class="compare-col bad">
-        <div class="compare-head">外注（従来）</div>
-        <div class="compare-body">
-          <div class="compare-row">
-            <p class="key">価格</p>
-            <p class="val">¥1,000,000〜<span class="sub">中規模LPの相場</span></p>
-          </div>
-          <div class="compare-row">
-            <p class="key">制作スピード</p>
-            <p class="val">1〜3ヶ月<span class="sub">提案→確認→修正のループ</span></p>
-          </div>
-          <div class="compare-row">
-            <p class="key">修正の自由度</p>
-            <p class="val">1回ごと費用<span class="sub">軽微な修正でも見積もり待ち</span></p>
-          </div>
-          <div class="compare-row">
-            <p class="key">社内ノウハウ</p>
-            <p class="val">残らない<span class="sub">担当者が変わるとゼロから</span></p>
-          </div>
+    <div class="compare-table">
+      <div class="ct-row ct-head">
+        <div class="ct-key" aria-hidden="true"></div>
+        <div class="ct-bad-head">外注（従来）</div>
+        <div class="ct-good-head">
+          <span class="rec">RECOMMEND</span>
+          <span>内製化</span>
         </div>
       </div>
-      <div class="compare-col good">
-        <div class="compare-head">
-          <span class="badge">RECOMMEND</span><br>
-          内製化（ホームページ内製化くん）
-        </div>
-        <div class="compare-body">
-          <div class="compare-row">
-            <p class="key">価格</p>
-            <p class="val">実質 ¥200,000〜<span class="sub">助成金活用・2名受講時</span></p>
-          </div>
-          <div class="compare-row">
-            <p class="key">制作スピード</p>
-            <p class="val">最短 3日<span class="sub">AIと一緒に組み立てる</span></p>
-          </div>
-          <div class="compare-row">
-            <p class="key">修正の自由度</p>
-            <p class="val">無制限・自由<span class="sub">思いついた瞬間に反映</span></p>
-          </div>
-          <div class="compare-row">
-            <p class="key">社内ノウハウ</p>
-            <p class="val">蓄積される<span class="sub">スキルとして人に残る</span></p>
-          </div>
-        </div>
+      <div class="ct-row">
+        <div class="ct-key">価格</div>
+        <div class="ct-bad">¥1,000,000〜<span class="sub">中規模LPの相場</span></div>
+        <div class="ct-good">実質 ¥200,000〜<span class="sub">助成金活用・2名受講時</span></div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-key">制作スピード</div>
+        <div class="ct-bad">1〜3ヶ月<span class="sub">提案→確認→修正のループ</span></div>
+        <div class="ct-good">最短 3日<span class="sub">AIと一緒に組み立てる</span></div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-key">修正の自由度</div>
+        <div class="ct-bad">1回ごと費用<span class="sub">軽微な修正でも見積もり待ち</span></div>
+        <div class="ct-good">無制限・自由<span class="sub">思いついた瞬間に反映</span></div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-key">社内ノウハウ</div>
+        <div class="ct-bad">残らない<span class="sub">担当者が変わるとゼロから</span></div>
+        <div class="ct-good">蓄積される<span class="sub">スキルとして人に残る</span></div>
       </div>
     </div>
   </div>
