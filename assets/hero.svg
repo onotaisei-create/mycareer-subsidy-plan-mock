@@ -1,0 +1,171 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AIでホームページ制作を内製化するイメージ">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F2F8FC"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF6B00"/>
+      <stop offset="100%" stop-color="#FF8A33"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0091E0"/>
+      <stop offset="100%" stop-color="#5FB8E8"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-opacity="0.10"/>
+    </filter>
+    <filter id="softShadow">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bgGrad)" rx="40"/>
+
+  <!-- Decorative blobs -->
+  <circle cx="720" cy="120" r="200" fill="#E6F4FB" opacity="0.6"/>
+  <circle cx="80" cy="720" r="180" fill="#FFF4EB" opacity="0.55"/>
+  <circle cx="140" cy="160" r="80" fill="#C5E5F5" opacity="0.35"/>
+  <circle cx="680" cy="640" r="60" fill="#FFD9B8" opacity="0.4"/>
+
+  <!-- Grid dots pattern -->
+  <g fill="#0091E0" opacity="0.08">
+    <circle cx="60" cy="60" r="2"/>
+    <circle cx="100" cy="60" r="2"/>
+    <circle cx="140" cy="60" r="2"/>
+    <circle cx="60" cy="100" r="2"/>
+    <circle cx="100" cy="100" r="2"/>
+    <circle cx="60" cy="140" r="2"/>
+    <circle cx="700" cy="700" r="2"/>
+    <circle cx="740" cy="700" r="2"/>
+    <circle cx="700" cy="740" r="2"/>
+    <circle cx="740" cy="740" r="2"/>
+  </g>
+
+  <!-- Browser window -->
+  <g transform="translate(80, 150)" filter="url(#shadow)">
+    <rect width="540" height="400" rx="18" fill="#fff" stroke="#E5E7EB" stroke-width="1.5"/>
+
+    <!-- Window chrome -->
+    <path d="M0 18 Q0 0 18 0 L522 0 Q540 0 540 18 L540 48 L0 48 Z" fill="#FAFBFC"/>
+    <line x1="0" y1="48" x2="540" y2="48" stroke="#E5E7EB" stroke-width="1"/>
+    <circle cx="24" cy="24" r="6.5" fill="#FF6B7A"/>
+    <circle cx="46" cy="24" r="6.5" fill="#FFCB6B"/>
+    <circle cx="68" cy="24" r="6.5" fill="#52D17E"/>
+
+    <!-- URL bar -->
+    <rect x="100" y="14" width="340" height="20" rx="10" fill="#fff" stroke="#E5E7EB"/>
+    <circle cx="114" cy="24" r="3" fill="#52D17E"/>
+    <rect x="126" y="20" width="180" height="8" rx="1" fill="#CBD5E0"/>
+
+    <!-- Page content: English caption -->
+    <rect x="44" y="82" width="86" height="11" rx="2" fill="#0091E0"/>
+
+    <!-- Heading lines -->
+    <rect x="44" y="106" width="380" height="24" rx="3" fill="#1A1A1A"/>
+    <rect x="44" y="136" width="270" height="24" rx="3" fill="#1A1A1A"/>
+
+    <!-- Pills row -->
+    <rect x="44" y="184" width="96" height="28" rx="14" fill="#fff" stroke="#C5E5F5" stroke-width="1.5"/>
+    <rect x="146" y="184" width="96" height="28" rx="14" fill="#fff" stroke="#C5E5F5" stroke-width="1.5"/>
+    <rect x="248" y="184" width="96" height="28" rx="14" fill="#fff" stroke="#C5E5F5" stroke-width="1.5"/>
+
+    <!-- Pill inner content -->
+    <rect x="60" y="194" width="64" height="9" rx="1" fill="#0091E0"/>
+    <rect x="162" y="194" width="64" height="9" rx="1" fill="#0091E0"/>
+    <rect x="264" y="194" width="64" height="9" rx="1" fill="#0091E0"/>
+
+    <!-- CTA button -->
+    <rect x="44" y="236" width="186" height="46" rx="23" fill="url(#orangeGrad)"/>
+    <rect x="86" y="253" width="102" height="12" rx="2" fill="#fff"/>
+
+    <!-- Card row -->
+    <rect x="44" y="304" width="148" height="78" rx="10" fill="#F7F9FC" stroke="#E5E7EB"/>
+    <rect x="200" y="304" width="148" height="78" rx="10" fill="#F7F9FC" stroke="#E5E7EB"/>
+    <rect x="356" y="304" width="148" height="78" rx="10" fill="#F7F9FC" stroke="#E5E7EB"/>
+
+    <!-- Card inner content x3 -->
+    <rect x="56" y="316" width="42" height="9" rx="1" fill="#0091E0"/>
+    <rect x="56" y="332" width="110" height="11" rx="1" fill="#1A1A1A"/>
+    <rect x="56" y="350" width="86" height="7" rx="1" fill="#A8B0BC"/>
+    <rect x="56" y="362" width="64" height="7" rx="1" fill="#A8B0BC"/>
+
+    <rect x="212" y="316" width="42" height="9" rx="1" fill="#0091E0"/>
+    <rect x="212" y="332" width="110" height="11" rx="1" fill="#1A1A1A"/>
+    <rect x="212" y="350" width="86" height="7" rx="1" fill="#A8B0BC"/>
+    <rect x="212" y="362" width="64" height="7" rx="1" fill="#A8B0BC"/>
+
+    <rect x="368" y="316" width="42" height="9" rx="1" fill="#0091E0"/>
+    <rect x="368" y="332" width="110" height="11" rx="1" fill="#1A1A1A"/>
+    <rect x="368" y="350" width="86" height="7" rx="1" fill="#A8B0BC"/>
+    <rect x="368" y="362" width="64" height="7" rx="1" fill="#A8B0BC"/>
+  </g>
+
+  <!-- Smartphone mockup -->
+  <g transform="translate(500, 410) rotate(-4 110 165)" filter="url(#shadow)">
+    <rect width="220" height="340" rx="30" fill="#fff" stroke="#E5E7EB" stroke-width="1.5"/>
+    <!-- Notch -->
+    <rect x="84" y="14" width="52" height="7" rx="3.5" fill="#E5E7EB"/>
+    <!-- Inner screen -->
+    <rect x="14" y="38" width="192" height="288" rx="20" fill="#F2F8FC"/>
+    <!-- Phone content -->
+    <rect x="30" y="56" width="50" height="7" rx="1" fill="#0091E0"/>
+    <rect x="30" y="74" width="162" height="15" rx="2" fill="#1A1A1A"/>
+    <rect x="30" y="95" width="120" height="15" rx="2" fill="#1A1A1A"/>
+    <!-- Phone pills -->
+    <rect x="30" y="128" width="70" height="22" rx="11" fill="#fff" stroke="#C5E5F5"/>
+    <rect x="108" y="128" width="70" height="22" rx="11" fill="#fff" stroke="#C5E5F5"/>
+    <!-- Phone CTA -->
+    <rect x="30" y="168" width="162" height="36" rx="18" fill="url(#orangeGrad)"/>
+    <rect x="80" y="181" width="62" height="10" rx="2" fill="#fff"/>
+    <!-- Inner card -->
+    <rect x="30" y="222" width="162" height="62" rx="8" fill="#fff" stroke="#E5E7EB"/>
+    <rect x="44" y="234" width="50" height="7" rx="1" fill="#0091E0"/>
+    <rect x="44" y="248" width="110" height="10" rx="1" fill="#1A1A1A"/>
+    <rect x="44" y="264" width="86" height="7" rx="1" fill="#A8B0BC"/>
+    <!-- Home indicator -->
+    <rect x="80" y="302" width="60" height="4" rx="2" fill="#A8B0BC"/>
+  </g>
+
+  <!-- AI Sparkles -->
+  <g>
+    <!-- Large sparkle top right -->
+    <path d="M660 90 l9 -24 l9 24 l24 9 l-24 9 l-9 24 l-9 -24 l-24 -9 z" fill="url(#orangeGrad)" opacity="0.92"/>
+
+    <!-- Medium sparkle mid right -->
+    <path d="M740 370 l7 -18 l7 18 l18 7 l-18 7 l-7 18 l-7 -18 l-18 -7 z" fill="#0091E0" opacity="0.75"/>
+
+    <!-- Sparkle top left -->
+    <path d="M120 280 l5 -14 l5 14 l14 5 l-14 5 l-5 14 l-5 -14 l-14 -5 z" fill="#5FB8E8" opacity="0.85"/>
+
+    <!-- Bottom left sparkle -->
+    <path d="M50 480 l4 -12 l4 12 l12 4 l-12 4 l-4 12 l-4 -12 l-12 -4 z" fill="#FF8A33" opacity="0.7"/>
+
+    <!-- Small dots -->
+    <circle cx="60" cy="120" r="5" fill="#FF6B00" opacity="0.55"/>
+    <circle cx="730" cy="220" r="4" fill="#5FB8E8" opacity="0.65"/>
+    <circle cx="40" cy="380" r="3" fill="#FF8A33" opacity="0.5"/>
+    <circle cx="600" cy="120" r="3" fill="#0091E0" opacity="0.5"/>
+  </g>
+
+  <!-- AI Badge floating -->
+  <g transform="translate(440, 130)" filter="url(#softShadow)">
+    <rect width="140" height="38" rx="19" fill="#1A1A1A"/>
+    <circle cx="22" cy="19" r="5" fill="url(#orangeGrad)"/>
+    <text x="36" y="24" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" font-size="13" letter-spacing="0.1em">AI POWERED</text>
+  </g>
+
+  <!-- Floating "code" elements representing AI assistance -->
+  <g transform="translate(620, 580)" filter="url(#softShadow)">
+    <rect width="120" height="80" rx="10" fill="#1A1A1A"/>
+    <circle cx="14" cy="14" r="3" fill="#FF6B7A"/>
+    <circle cx="24" cy="14" r="3" fill="#FFCB6B"/>
+    <circle cx="34" cy="14" r="3" fill="#52D17E"/>
+    <rect x="14" y="28" width="40" height="5" rx="1" fill="#5FB8E8"/>
+    <rect x="14" y="38" width="64" height="5" rx="1" fill="#fff" opacity="0.7"/>
+    <rect x="14" y="48" width="50" height="5" rx="1" fill="#FF8A33"/>
+    <rect x="14" y="58" width="80" height="5" rx="1" fill="#fff" opacity="0.5"/>
+    <rect x="14" y="68" width="44" height="5" rx="1" fill="#5FB8E8"/>
+  </g>
+</svg>
