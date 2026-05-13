@@ -30,114 +30,138 @@
 html{font-size:62.5%;scroll-behavior:smooth}
 body{margin:0;color:var(--ink);font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;font-size:1.5rem;line-height:1.75;background:#fff;-webkit-font-smoothing:antialiased;letter-spacing:0.01em}
 a{color:inherit;text-decoration:none}
-.container{max-width:960px;margin:0 auto;padding:0 24px}
+.num{font-family:"Inter",sans-serif;font-weight:700}
 
-/* Header */
+/* ===== Layout (LP共通) ===== */
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+.section{padding:88px 0}
+.section.alt{background:var(--bg-soft)}
+.sec-head{text-align:center;margin:0 0 48px}
+.sec-head .eng{display:block;font-family:"Inter",sans-serif;font-size:1.2rem;font-weight:700;letter-spacing:0.28em;color:var(--primary);text-transform:uppercase;margin:0 0 10px}
+.sec-head h2{font-size:3rem;font-weight:700;margin:0;line-height:1.5;letter-spacing:-0.01em}
+.sec-head h2 mark{background:linear-gradient(transparent 60%,var(--primary-light) 60%);color:inherit;padding:0 4px}
+.sec-head .lead{margin:16px auto 0;max-width:680px;color:var(--ink-sub);font-size:1.5rem;line-height:1.85}
+@media (max-width:768px){
+  .section{padding:64px 0}
+  .sec-head{margin:0 0 32px}
+  .sec-head h2{font-size:2.2rem;line-height:1.45}
+  .sec-head .lead{font-size:1.4rem}
+}
+
+/* ===== Header (LP共通) ===== */
 .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .header-inner{max-width:1200px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.6rem;letter-spacing:-0.01em}
 .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-family:"Inter",sans-serif;font-size:1.4rem}
 .logo small{display:block;color:var(--ink-sub);font-size:1rem;font-weight:500;margin-top:1px}
-.back-link{color:var(--ink-sub);font-size:1.3rem;font-weight:600;display:inline-flex;align-items:center;gap:6px}
-.back-link:hover{color:var(--primary)}
-.cta-orange{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--orange);color:#fff !important;font-weight:700;font-size:1.4rem;padding:11px 22px;border-radius:100px;box-shadow:0 4px 14px rgba(255,107,0,0.35);transition:all 0.2s ease;white-space:nowrap}
-.cta-orange:hover{background:var(--orange-dark);transform:translateY(-2px)}
+.cta-orange{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--orange);color:#fff !important;font-weight:700;font-size:1.4rem;padding:11px 22px;border-radius:100px;box-shadow:0 4px 14px rgba(255,107,0,0.35);transition:all 0.2s ease;border:none;cursor:pointer;white-space:nowrap}
+.cta-orange:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,107,0,0.45)}
 .cta-orange.large{font-size:1.8rem;padding:24px 72px;min-width:320px}
+.cta-orange .arrow{font-family:"Inter",sans-serif}
 @media (max-width:559px){
   .logo{font-size:1.3rem}
   .logo small{display:none}
+  .header .cta-orange{font-size:1.2rem;padding:9px 16px}
   .cta-orange.large{font-size:1.5rem;padding:16px 40px;min-width:0;width:100%;max-width:340px}
 }
 
-/* Page Hero */
-.page-hero{background:linear-gradient(180deg,var(--primary-soft) 0%,#fff 100%);padding:72px 0 56px;text-align:center;border-bottom:1px solid var(--line)}
-.page-hero .eng{display:block;font-family:"Inter",sans-serif;font-size:1.2rem;font-weight:700;letter-spacing:0.28em;color:var(--primary);text-transform:uppercase;margin:0 0 10px}
-.page-hero h1{font-size:3.2rem;font-weight:800;margin:0 0 16px;line-height:1.45;letter-spacing:-0.01em}
-.page-hero .lead{color:var(--ink-sub);font-size:1.45rem;max-width:680px;margin:0 auto;line-height:1.85}
-@media (max-width:768px){
-  .page-hero{padding:48px 0 40px}
-  .page-hero h1{font-size:2.2rem}
+/* ===== Page Hero (LPヒーローと同じ装飾系統) ===== */
+.page-hero{background:linear-gradient(180deg,var(--primary-soft) 0%,#fff 100%);padding:88px 0 72px;text-align:center;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;top:-200px;right:-100px;width:520px;height:520px;background:radial-gradient(circle,rgba(0,145,224,0.10) 0%,transparent 70%);z-index:0}
+.page-hero::after{content:"";position:absolute;bottom:-200px;left:-120px;width:480px;height:480px;background:radial-gradient(circle,rgba(95,184,232,0.10) 0%,transparent 70%);z-index:0}
+.page-hero .container{position:relative;z-index:1}
+.page-hero .badge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1.5px solid var(--primary);color:var(--primary);font-weight:700;font-size:1.2rem;padding:6px 14px;border-radius:100px;margin:0 0 20px}
+.page-hero .badge::before{content:"●";font-size:0.7em}
+.page-hero h1{font-size:4rem;font-weight:800;line-height:1.35;letter-spacing:-0.02em;margin:0 0 20px}
+.page-hero h1 mark{background:linear-gradient(transparent 60%,var(--primary-light) 60%);color:inherit;padding:0 4px}
+.page-hero .lead{color:var(--ink-sub);font-size:1.5rem;max-width:680px;margin:0 auto;line-height:1.9}
+@media (max-width:959px){
+  .page-hero{padding:56px 0 48px}
+  .page-hero h1{font-size:2.8rem}
+}
+@media (max-width:559px){
+  .page-hero h1{font-size:2.4rem}
   .page-hero .lead{font-size:1.3rem}
 }
 
-/* Section */
-.section{padding:72px 0}
-.section.alt{background:var(--bg-soft)}
-.sec-head{margin:0 0 32px}
-.sec-head .eng{display:block;font-family:"Inter",sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:0.28em;color:var(--primary);text-transform:uppercase;margin:0 0 8px}
-.sec-head h2{font-size:2.4rem;font-weight:700;margin:0;line-height:1.5;letter-spacing:-0.01em}
-@media (max-width:768px){
-  .section{padding:48px 0}
-  .sec-head h2{font-size:1.8rem}
-}
-
-/* Spec table */
-.spec-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:0}
-.spec-table th,.spec-table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line);font-size:1.4rem;line-height:1.7;vertical-align:top}
-.spec-table th{background:#F7F9FC;font-weight:700;color:var(--ink-sub);width:30%;font-size:1.3rem;letter-spacing:0.04em}
+/* ===== Spec Table (LPカードと同じトーン) ===== */
+.spec-card{background:#fff;border-radius:16px;border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,0.04);overflow:hidden;max-width:840px;margin:0 auto}
+.spec-table{width:100%;border-collapse:collapse;margin:0}
+.spec-table th,.spec-table td{padding:18px 24px;text-align:left;border-bottom:1px solid var(--line);font-size:1.45rem;line-height:1.7;vertical-align:top}
+.spec-table th{background:#F7F9FC;font-weight:700;color:var(--ink-sub);width:32%;font-size:1.25rem;letter-spacing:0.04em}
 .spec-table tr:last-child th,.spec-table tr:last-child td{border-bottom:none}
-.spec-table .note-small{display:block;color:var(--ink-sub);font-size:1.2rem;margin-top:6px;line-height:1.6}
-.spec-table .price-strong{font-size:1.7rem;font-weight:800;color:var(--ink)}
+.spec-table .price-strong{font-size:1.8rem;font-weight:800;color:var(--ink)}
+.spec-table .price-strong .accent{color:var(--orange)}
+.spec-table .note-small{display:block;color:var(--ink-sub);font-size:1.2rem;margin-top:6px;line-height:1.7}
 @media (max-width:559px){
-  .spec-table th,.spec-table td{display:block;width:100%;border-bottom:none}
-  .spec-table th{padding:14px 20px 4px;font-size:1.2rem}
+  .spec-table th,.spec-table td{display:block;width:100%;border-bottom:none;padding:14px 20px}
+  .spec-table th{padding:14px 20px 4px}
   .spec-table td{padding:0 20px 14px;border-bottom:1px solid var(--line)}
   .spec-table tr:last-child td{border-bottom:none}
+  .spec-table .price-strong{font-size:1.6rem}
 }
 
-/* Day block */
-.day-block{background:#fff;border-radius:14px;padding:28px 32px;margin:0 0 20px;border:1px solid var(--line);border-left:4px solid var(--primary)}
+/* ===== Day Block (LPカードトーン) ===== */
+.day-block{background:#fff;border-radius:16px;padding:32px;margin:0 0 20px;border:1px solid var(--line);border-left:4px solid var(--primary);box-shadow:0 4px 16px rgba(0,0,0,0.03);max-width:880px;margin-left:auto;margin-right:auto;margin-bottom:20px}
 .day-block:last-child{margin-bottom:0}
-.day-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 12px}
-.day-tag{font-family:"Inter",sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:0.08em;padding:3px 12px;background:var(--primary);color:#fff;border-radius:6px}
-.day-ttl{font-size:1.7rem;font-weight:700;margin:0;line-height:1.5}
+.day-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 14px}
+.day-tag{font-family:"Inter",sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:0.08em;padding:4px 14px;background:var(--primary);color:#fff;border-radius:6px;line-height:1.4}
+.day-ttl{font-size:1.8rem;font-weight:700;margin:0;line-height:1.5}
 .day-time{font-size:1.25rem;color:var(--ink-sub);font-family:"Inter",sans-serif;font-weight:600}
-.goals{background:#F7F9FC;padding:14px 18px;border-radius:8px;margin:14px 0;font-size:1.35rem}
+.goals{background:var(--primary-soft);padding:16px 20px;border-radius:10px;margin:14px 0;font-size:1.35rem}
 .goals .label{display:inline-block;font-weight:700;color:var(--primary);margin-right:8px;font-size:1.2rem;letter-spacing:0.04em}
 .goals ul{margin:6px 0 0;padding-left:20px;line-height:1.85}
 .schedule-list{list-style:none;padding:0;margin:14px 0 0}
-.schedule-list li{display:flex;gap:14px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:1.35rem;line-height:1.6}
+.schedule-list li{display:flex;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:1.35rem;line-height:1.6}
 .schedule-list li:last-child{border-bottom:none}
-.schedule-list .time{font-family:"Inter",sans-serif;font-weight:600;color:var(--ink-sub);min-width:110px;font-size:1.25rem}
+.schedule-list .time{font-family:"Inter",sans-serif;font-weight:600;color:var(--ink-sub);min-width:120px;font-size:1.25rem}
 @media (max-width:559px){
-  .day-block{padding:20px 18px}
-  .day-ttl{font-size:1.5rem}
+  .day-block{padding:22px 18px}
+  .day-ttl{font-size:1.55rem}
   .schedule-list li{flex-direction:column;gap:2px}
   .schedule-list .time{min-width:0;font-size:1.2rem}
 }
 
-/* Subsidy box */
-.subsidy-box{background:#fff;border-radius:14px;padding:32px 36px;border:1px solid var(--line)}
-.subsidy-box p{margin:0 0 16px;font-size:1.4rem;line-height:1.85;color:var(--ink)}
-.sim-table{width:100%;border-collapse:collapse;margin:20px 0}
-.sim-table th,.sim-table td{padding:14px 20px;text-align:left;border-bottom:1px solid var(--line);font-size:1.45rem;line-height:1.7}
-.sim-table th{background:#F7F9FC;font-weight:700;width:38%;color:var(--ink-sub);font-size:1.3rem}
+/* ===== Subsidy (LPトーン) ===== */
+.subsidy-box{background:#fff;border-radius:16px;padding:40px 44px;border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,0.04);max-width:880px;margin:0 auto}
+.subsidy-box .intro{margin:0 0 20px;font-size:1.45rem;line-height:1.9;color:var(--ink)}
+.sim-table{width:100%;border-collapse:collapse;margin:24px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.sim-table th,.sim-table td{padding:16px 22px;text-align:left;border-bottom:1px solid var(--line);font-size:1.45rem;line-height:1.7}
+.sim-table th{background:#F7F9FC;font-weight:700;width:38%;color:var(--ink-sub);font-size:1.3rem;letter-spacing:0.04em}
+.sim-table tr:last-child th,.sim-table tr:last-child td{border-bottom:none}
 .sim-table .highlight{background:#FFF7F0}
-.sim-table .highlight td{font-size:1.9rem;font-weight:800;color:var(--orange)}
-.sim-table .highlight th{color:var(--ink)}
-.note{background:#F7F9FC;padding:18px 22px;margin:20px 0 0;font-size:1.25rem;border-radius:8px}
-.note ul{margin:0;padding-left:20px;line-height:1.85}
+.sim-table .highlight td{font-size:2rem;font-weight:800;color:var(--orange)}
+.sim-table .highlight th{color:var(--ink);background:#FFEEDD}
+.note{background:var(--bg-soft);padding:20px 24px;margin:24px 0 0;font-size:1.3rem;border-radius:10px}
+.note ul{margin:0;padding-left:20px;line-height:1.9}
 .note li{margin-bottom:4px}
 @media (max-width:559px){
-  .subsidy-box{padding:24px 20px}
+  .subsidy-box{padding:28px 22px}
   .sim-table th,.sim-table td{padding:12px 14px}
   .sim-table .highlight td{font-size:1.6rem}
 }
 
-/* CTA Section */
-.cta-section{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%);color:#fff;text-align:center;padding:72px 0;position:relative;overflow:hidden}
-.cta-section::before{content:"";position:absolute;top:-150px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,0.15) 0%,transparent 70%)}
-.cta-section .container{position:relative;z-index:1}
-.cta-section h2{font-size:2.4rem;font-weight:800;margin:0 0 12px;color:#fff;line-height:1.45}
-.cta-section .sub{font-size:1.35rem;margin:0 0 32px;line-height:1.85;opacity:0.95}
-.cta-section .cta-orange{box-shadow:0 8px 24px rgba(0,0,0,0.25)}
-.cta-section .small{margin-top:14px;font-size:1.15rem;opacity:0.9}
+/* ===== Final CTA (LPと同じ) ===== */
+.final-cta{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%);color:#fff;text-align:center;padding:80px 0;position:relative;overflow:hidden}
+.final-cta::before{content:"";position:absolute;top:-150px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,0.15) 0%,transparent 70%);z-index:0}
+.final-cta::after{content:"";position:absolute;bottom:-150px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,0.10) 0%,transparent 70%);z-index:0}
+.final-cta .container{position:relative;z-index:1}
+.final-cta h2{font-size:2.8rem;font-weight:800;margin:0 0 12px;color:#fff;line-height:1.45}
+.final-cta .sub{font-size:1.4rem;margin:0 0 32px;line-height:1.85;opacity:0.95}
+.final-cta .cta-orange{box-shadow:0 8px 24px rgba(0,0,0,0.25)}
+.final-cta .small{margin-top:14px;font-size:1.15rem;opacity:0.9}
 @media (max-width:768px){
-  .cta-section{padding:56px 0}
-  .cta-section h2{font-size:1.8rem}
+  .final-cta{padding:56px 0}
+  .final-cta h2{font-size:2rem}
+  .final-cta .sub{font-size:1.3rem}
 }
 
-/* Footer */
+/* ===== Back to top link ===== */
+.back-row{text-align:center;padding:32px 0 8px}
+.back-row a{color:var(--ink-sub);font-size:1.3rem;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.back-row a:hover{color:var(--primary)}
+
+/* ===== Footer (LP共通) ===== */
 .footer{background:#1a1a1a;color:#A8B0BC;padding:32px 24px;text-align:center;font-size:1.2rem;line-height:1.8}
 .footer .name{color:#fff;font-weight:700;font-size:1.35rem;margin:0 0 6px}
 .footer a{color:#A8B0BC;text-decoration:underline}
@@ -145,45 +169,51 @@ a{color:inherit;text-decoration:none}
 </head>
 <body>
 
+<!-- Header (LPと同じ) -->
 <header class="header">
   <div class="header-inner">
     <a href="../" class="logo">
       <span class="logo-icon">H</span>
       <span>ホームページ内製化くん<small>by マイキャリア株式会社</small></span>
     </a>
-    <a href="../" class="back-link">← トップに戻る</a>
+    <a href="../#contact" class="cta-orange">無料相談する<span class="arrow">→</span></a>
   </div>
 </header>
 
+<!-- Page Hero -->
 <section class="page-hero">
   <div class="container">
-    <span class="eng">Plan Detail</span>
-    <h1>プラン詳細・カリキュラム</h1>
+    <span class="badge">Plan Detail</span>
+    <h1>プラン詳細・<mark>カリキュラム</mark></h1>
     <p class="lead">「ホームページ内製化くん」の研修内容・スケジュール・助成金活用の詳細をご案内します。</p>
   </div>
 </section>
 
+<!-- Program Overview -->
 <section class="section">
   <div class="container">
     <div class="sec-head">
       <span class="eng">Program Overview</span>
       <h2>研修概要</h2>
     </div>
-    <table class="spec-table">
-      <tr><th>研修時間</th><td>計11時間 / 3日間</td></tr>
-      <tr><th>形式</th><td>オンライン（Zoom）or 対面</td></tr>
-      <tr><th>講義：実習比率</th><td>30% : 70%</td></tr>
-      <tr><th>料金</th><td><span class="price-strong">¥400,000 / 人（税抜）</span><small class="note-small">※助成金活用で実質 ¥200,000〜（2名受講・中小企業の場合）</small></td></tr>
-      <tr><th>使用ツール</th><td>Claude Code、VS Code、React / Next.js、MicroCMS、Git、Xserver<small class="note-small">※AIツールは進化のスピードが早いため、研修時点で最適なツールを選定して研修を行います。</small></td></tr>
-    </table>
+    <div class="spec-card">
+      <table class="spec-table">
+        <tr><th>研修時間</th><td>計11時間 / 3日間</td></tr>
+        <tr><th>形式</th><td>オンライン（Zoom）or 対面</td></tr>
+        <tr><th>講義：実習比率</th><td>30% : 70%</td></tr>
+        <tr><th>料金</th><td><span class="price-strong">¥400,000 / 人（税抜）</span><small class="note-small">※助成金活用で <span class="accent" style="color:var(--orange);font-weight:800">実質 ¥200,000〜</span>（2名受講・中小企業の場合）</small></td></tr>
+        <tr><th>使用ツール</th><td>Claude Code、VS Code、React / Next.js、MicroCMS、Git、Xserver<small class="note-small">※AIツールは進化のスピードが早いため、研修時点で最適なツールを選定して研修を行います。</small></td></tr>
+      </table>
+    </div>
   </div>
 </section>
 
+<!-- Curriculum -->
 <section class="section alt">
   <div class="container">
     <div class="sec-head">
       <span class="eng">Curriculum</span>
-      <h2>3日間カリキュラム</h2>
+      <h2>3日間<mark>カリキュラム</mark></h2>
     </div>
 
     <div class="day-block">
@@ -259,14 +289,15 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
+<!-- Subsidy -->
 <section class="section">
   <div class="container">
     <div class="sec-head">
       <span class="eng">Subsidy</span>
-      <h2>人材開発支援助成金の活用</h2>
+      <h2>人材開発支援助成金の<mark>活用</mark></h2>
     </div>
     <div class="subsidy-box">
-      <p>厚生労働省の「人材開発支援助成金（事業展開等リスキリング支援コース）」を活用することで、研修費用の大幅な削減が可能です。中小企業の場合、経費の最大75%が助成されます。</p>
+      <p class="intro">厚生労働省の「人材開発支援助成金（事業展開等リスキリング支援コース）」を活用することで、研修費用の大幅な削減が可能です。中小企業の場合、経費の最大75%が助成されます。</p>
       <table class="sim-table">
         <tr><th>通常料金</th><td>¥400,000 / 人</td></tr>
         <tr><th>助成率</th><td>最大 75%</td></tr>
@@ -286,15 +317,22 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<section class="cta-section">
+<!-- Final CTA -->
+<section class="final-cta">
   <div class="container">
     <h2>まずは無料相談から</h2>
     <p class="sub">助成金の申請可否診断から、貴社に最適な研修プランのご提案まで、丁寧にご対応いたします。</p>
-    <a href="../#contact" class="cta-orange large">無料相談する →</a>
+    <a href="../#contact" class="cta-orange large">無料相談する<span class="arrow">→</span></a>
     <p class="small">所要時間 約30分／Zoom / 対面どちらも対応</p>
   </div>
 </section>
 
+<!-- Back to LP -->
+<div class="back-row">
+  <a href="../">← トップページに戻る</a>
+</div>
+
+<!-- Footer -->
 <footer class="footer">
   <p class="name">ホームページ内製化くん</p>
   <p>運営：<a href="https://my-career.co.jp/" target="_blank" rel="noopener">マイキャリア株式会社</a></p>
