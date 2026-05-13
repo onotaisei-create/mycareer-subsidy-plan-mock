@@ -80,8 +80,8 @@ a{color:inherit;text-decoration:none}
 .hero h1 .hl{background:linear-gradient(transparent 65%,var(--primary-light) 65%);padding:0 3px}
 .hero h1 .accent{color:var(--primary)}
 .hero .pills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
-.hero .pill{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--primary-light);font-weight:700;font-size:1.3rem;padding:7px 14px;border-radius:100px;white-space:nowrap}
-.hero .pill .pill-num{color:var(--primary);font-family:"Inter",sans-serif;font-weight:800}
+.hero .pill{display:inline-block;background:#fff;border:1px solid var(--primary-light);font-weight:700;font-size:1.3rem;padding:7px 16px;border-radius:100px;white-space:nowrap;line-height:1.6}
+.hero .pill .pill-num{color:var(--primary);font-family:"Inter",sans-serif;font-weight:800;font-size:1.1em;margin:0 1px;vertical-align:baseline}
 .hero-sub{color:var(--ink-sub);font-size:1.4rem;line-height:1.85;margin:0 0 24px}
 .hero-img{aspect-ratio:16/9;border-radius:20px;overflow:hidden;display:block;background:transparent}
 .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
@@ -105,7 +105,8 @@ a{color:inherit;text-decoration:none}
 /* ========== Worries ========== */
 .worry-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .worry-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px 24px;text-align:center;position:relative}
-.worry-card .face{font-size:3.6rem;margin:0 0 10px;line-height:1}
+.worry-card .worry-icon{width:52px;height:52px;margin:0 auto 16px;color:var(--primary);background:var(--primary-soft);border-radius:14px;display:flex;align-items:center;justify-content:center}
+.worry-card .worry-icon svg{width:28px;height:28px;display:block}
 .worry-card h3{font-size:1.7rem;font-weight:700;margin:0 0 10px;line-height:1.5}
 .worry-card p{color:var(--ink-sub);font-size:1.35rem;line-height:1.8;margin:0}
 @media (max-width:768px){
@@ -191,7 +192,8 @@ a{color:inherit;text-decoration:none}
 
 /* ========== Instructor ========== */
 .instructor-card{background:#fff;border-radius:20px;padding:48px;display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:center;box-shadow:0 8px 32px rgba(0,0,0,0.06);border:1px solid var(--line)}
-.instructor-photo{aspect-ratio:1/1;background:linear-gradient(135deg,var(--primary-soft) 0%,#D5EBF7 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--primary);font-weight:700;text-align:center;padding:20px;line-height:1.6;border:6px solid #fff;box-shadow:0 4px 16px rgba(0,145,224,0.15);font-size:1.3rem}
+.instructor-photo{aspect-ratio:1/1;background:linear-gradient(135deg,var(--primary-soft) 0%,#D5EBF7 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--primary);border:6px solid #fff;box-shadow:0 4px 16px rgba(0,145,224,0.15)}
+.instructor-photo svg{width:55%;height:55%;display:block}
 .instructor-body .role{display:inline-block;background:var(--primary);color:#fff;font-weight:700;font-size:1.2rem;padding:4px 12px;border-radius:100px;margin:0 0 12px}
 .instructor-body h3{font-size:2.4rem;font-weight:800;margin:0 0 6px;letter-spacing:-0.01em}
 .instructor-body .ruby{display:block;font-size:1.25rem;color:var(--ink-sub);font-weight:500;margin:0 0 18px}
@@ -288,7 +290,7 @@ a{color:inherit;text-decoration:none}
         <div class="pills">
           <span class="pill">実質<span class="pill-num">20</span>万円〜</span>
           <span class="pill">最短<span class="pill-num">3</span>日で制作</span>
-          <span class="pill">修正<span class="pill-num">∞</span>し放題</span>
+          <span class="pill">修正し放題</span>
         </div>
         <p class="hero-sub">「制作会社に依存せず、自社でホームページやLPを作れる」をAI研修で実現。<br>もう、修正のたびに費用も時間もかけない。</p>
       </div>
@@ -313,17 +315,36 @@ a{color:inherit;text-decoration:none}
     </div>
     <div class="worry-cards">
       <div class="worry-card">
-        <div class="face">💸</div>
+        <div class="worry-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M8.5 7 L12 12 L15.5 7"/>
+            <line x1="8" y1="13.5" x2="16" y2="13.5"/>
+            <line x1="8" y1="16.5" x2="16" y2="16.5"/>
+            <line x1="12" y1="12" x2="12" y2="18"/>
+          </svg>
+        </div>
         <h3>修正のたびに費用</h3>
         <p>「文言1行変えるだけで数万円」「軽微な変更で見積もり待ち」が当たり前になっていませんか？</p>
       </div>
       <div class="worry-card">
-        <div class="face">🐌</div>
+        <div class="worry-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <polyline points="12 7 12 12 15.5 14"/>
+          </svg>
+        </div>
         <h3>制作が遅い</h3>
         <p>キャンペーン用LPを翌週公開したくても、外注すると最短でも1〜3ヶ月。スピード感が合わない。</p>
       </div>
       <div class="worry-card">
-        <div class="face">📭</div>
+        <div class="worry-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <polyline points="3.5 7 12 12 20.5 7"/>
+            <line x1="12" y1="22" x2="12" y2="12"/>
+          </svg>
+        </div>
         <h3>ノウハウが残らない</h3>
         <p>外注しても社内には何も蓄積されない。担当者が変わるたびにゼロから依頼し直すループ。</p>
       </div>
@@ -448,17 +469,21 @@ a{color:inherit;text-decoration:none}
       <h2>現役で<mark>AIを使い倒している</mark>講師が教えます</h2>
     </div>
     <div class="instructor-card">
-      <div class="instructor-photo">[ 講師イラスト ]<br><small>※齋本さんの似顔絵イラスト</small></div>
+      <div class="instructor-photo">
+        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="40" cy="30" r="14"/>
+          <path d="M14 66 Q14 48 40 48 Q66 48 66 66"/>
+        </svg>
+      </div>
       <div class="instructor-body">
         <span class="role">メイン講師</span>
-        <h3>齋本 ◯◯</h3>
-        <span class="ruby">Saimoto ◯◯</span>
+        <h3>AI共創開発エキスパート</h3>
         <div class="tag-list">
           <span>非エンジニア出身</span>
           <span>AI共創開発実践</span>
           <span>Claude Code エキスパート</span>
         </div>
-        <p class="bio">※学歴・経歴をここに記載（◯◯大学◯学部卒業後、◯◯にて◯◯を担当。現在は…）。<br>非エンジニアの立場からAIで内製化を実現してきた経験を元に、受講者が「自分でもできる」感覚を3日間で持ち帰れるよう設計しています。</p>
+        <p class="bio">非エンジニアの立場からAIで内製化を実現してきた経験を元に、受講者が「自分でもできる」感覚を3日間で持ち帰れるよう設計しています。実務でAIを使い倒している現役の視点から、明日から使える具体的なワークフローをお伝えします。</p>
       </div>
     </div>
   </div>
