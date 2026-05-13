@@ -11,9 +11,9 @@
 ```
 
 配置方法（いずれか）:
-- **FTP / SFTP**：FileZilla 等でアップロード
-- **WordPress 管理画面**：外観 → テーマファイルエディター → テンプレートに追加（推奨しない／編集ロックが必要）
-- **サーバーのファイルマネージャ**：Xserver のファイルマネージャから直接アップロード
+- **お名前.com Web Filer**（推奨／ブラウザだけで完結） → [ONAMAE-UPLOAD.md](ONAMAE-UPLOAD.md) 参照
+- **FTP / SFTP**（Cyberduck / FileZilla 等） → [ONAMAE-UPLOAD.md](ONAMAE-UPLOAD.md) 参照
+- **WordPress 管理画面**：外観 → テーマファイルエディター → 既存ファイル編集のみで新規作成不可なので使えない
 
 ## 2. WordPress 管理画面で固定ページを作成
 
