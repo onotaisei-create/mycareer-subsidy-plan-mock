@@ -69,6 +69,8 @@ a{color:inherit;text-decoration:none}
 
 /* ========== Header ========== */
 .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo img{display:block;height:40px;width:auto}
+@media (max-width:559px){.logo img{height:30px}}
 .header-inner{max-width:1200px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.6rem;letter-spacing:-0.01em}
 .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-family:"Inter",sans-serif;font-size:1.4rem}
@@ -85,33 +87,42 @@ a{color:inherit;text-decoration:none}
   .header .cta-orange{font-size:1.2rem;padding:9px 16px}
 }
 
-/* ========== Hero (Image BG + Centered Text) ========== */
-.hero{position:relative;min-height:72vh;display:flex;align-items:center;text-align:center;padding:100px 24px 72px;overflow:hidden;color:#fff}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1A3556 0%,#2C5282 50%,#0F2540 100%);background-image:url("./assets/hero-bg.jpg"),linear-gradient(135deg,#1A3556 0%,#2C5282 50%,#0F2540 100%);background-size:cover;background-position:center;z-index:0}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,37,64,0.45) 0%,rgba(10,37,64,0.65) 100%)}
+/* ========== Hero (Light + Purple AI theme, 2-col) ========== */
+.hero{position:relative;padding:56px 0 72px;overflow:hidden;background:linear-gradient(180deg,#F5F1FE 0%,#FFFFFF 70%);color:var(--ink)}
+.hero::before{content:"";position:absolute;top:-220px;right:-220px;width:640px;height:640px;background:radial-gradient(circle,rgba(141,113,232,0.30) 0%,transparent 70%);z-index:0}
+.hero::after{content:"";position:absolute;bottom:-200px;left:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(167,139,250,0.20) 0%,transparent 70%);z-index:0}
 .hero .container{position:relative;z-index:1}
-.hero-inner{max-width:880px;margin:0 auto}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.30);color:#fff;font-weight:600;font-size:1.2rem;padding:7px 18px;border-radius:100px;margin:0 0 28px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.hero-badge::before{content:"●";font-size:0.7em;color:#FFB36B}
-.hero h1{font-size:5.2rem;font-weight:700;line-height:1.4;letter-spacing:-0.025em;margin:0 0 28px;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,0.30)}
-.hero h1 .hl{background:linear-gradient(transparent 62%,rgba(255,179,107,0.6) 62%);padding:0 4px}
-.hero h1 .accent{background:linear-gradient(135deg,#FFD37A 0%,#FF9C42 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
-.hero .pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 32px;justify-content:center}
-.hero .pill{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.30);font-weight:600;font-size:1.35rem;padding:8px 18px;border-radius:100px;white-space:nowrap;line-height:1.6;color:#fff;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.hero .pill .pill-num{color:#FFD37A;font-family:"Inter",sans-serif;font-weight:800;font-size:1.1em;margin:0 1px;vertical-align:baseline}
-.hero-sub{color:rgba(255,255,255,0.92);font-size:1.55rem;line-height:1.85;margin:0 0 40px;text-shadow:0 1px 12px rgba(0,0,0,0.25)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-text{max-width:560px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #DCD3F7;color:#5A3CC1;font-weight:700;font-size:1.2rem;padding:7px 18px;border-radius:100px;margin:0 0 24px;box-shadow:0 4px 14px rgba(109,91,227,0.10)}
+.hero-badge::before{content:"●";font-size:0.7em;color:#FF6B00}
+.hero h1{font-size:4.6rem;font-weight:800;line-height:1.45;letter-spacing:-0.025em;margin:0 0 24px;color:var(--navy)}
+.hero h1 .accent{background:linear-gradient(135deg,#6D5BE3 0%,#A78BFA 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{color:var(--ink-sub);font-size:1.5rem;line-height:1.9;margin:0 0 28px}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 32px;max-width:520px}
+.hero-stat{background:#fff;border:1px solid #E7DFFC;border-radius:14px;padding:14px 12px;text-align:center;box-shadow:0 4px 16px rgba(109,91,227,0.06)}
+.hero-stat .stat-label{display:block;font-size:1.05rem;color:var(--ink-sub);font-weight:600;margin:0 0 4px}
+.hero-stat .stat-value{display:block;font-size:1.5rem;font-weight:800;color:var(--navy);letter-spacing:-0.01em;line-height:1.3}
+.hero-stat .stat-value .num{color:#6D5BE3;font-family:"Inter",sans-serif;font-size:1.3em;margin-right:2px}
 .hero-cta-wrap{margin-top:8px}
-.hero-cta-wrap .note{color:rgba(255,255,255,0.78);font-size:1.25rem;margin-top:14px}
+.hero-cta-wrap .note{color:var(--ink-sub);font-size:1.2rem;margin-top:14px}
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
+.hero-visual img{max-width:100%;height:auto;display:block}
 @media (max-width:959px){
-  .hero{min-height:60vh;padding:80px 20px 56px}
-  .hero h1{font-size:3.4rem;line-height:1.45}
+  .hero{padding:40px 0 56px}
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero-text{max-width:100%;text-align:center;margin:0 auto}
+  .hero-stats{margin-left:auto;margin-right:auto}
+  .hero h1{font-size:3.2rem;line-height:1.45}
   .hero-sub{font-size:1.4rem}
 }
 @media (max-width:559px){
-  .hero{min-height:auto;padding:64px 16px 48px}
-  .hero h1{font-size:2.6rem;letter-spacing:-0.02em}
-  .hero .pill{font-size:1.2rem;padding:6px 14px}
+  .hero{padding:32px 0 48px}
+  .hero h1{font-size:2.5rem;letter-spacing:-0.02em}
   .hero-sub{font-size:1.3rem}
+  .hero-stat{padding:10px 6px}
+  .hero-stat .stat-label{font-size:0.95rem}
+  .hero-stat .stat-value{font-size:1.2rem}
 }
 
 /* ========== Worries ========== */
@@ -316,9 +327,8 @@ a{color:inherit;text-decoration:none}
 <!-- Header -->
 <header class="header">
   <div class="header-inner">
-    <a href="#" class="logo">
-      <span class="logo-icon">H</span>
-      <span>ホームページ内製化くん<small>by マイキャリア株式会社</small></span>
+    <a href="#" class="logo" aria-label="ホームページ内製化くん">
+      <img src="./assets/logo.svg" alt="ホームページ内製化くん">
     </a>
     <a href="#contact" class="cta-orange">無料相談する<span class="arrow">→</span></a>
   </div>
@@ -326,20 +336,33 @@ a{color:inherit;text-decoration:none}
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-bg"></div>
   <div class="container">
-    <div class="hero-inner" id="contact">
-      <span class="hero-badge">厚生労働省 人材開発支援助成金 対象</span>
-      <h1>ホームページ制作、<br><span class="accent">社内で完結</span>。</h1>
-      <div class="pills">
-        <span class="pill">実質<span class="pill-num">20</span>万円〜</span>
-        <span class="pill">最短<span class="pill-num">3</span>日で制作</span>
-        <span class="pill">修正し放題</span>
+    <div class="hero-grid" id="contact">
+      <div class="hero-text">
+        <span class="hero-badge">厚生労働省 人材開発支援助成金 対象</span>
+        <h1>AIで、ホームページ制作を<br><span class="accent">社内で完結</span>。</h1>
+        <p class="hero-sub">社員がAIを活用し、ホームページ・LPを<br>社内で制作・更新できる体制へ。</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-label">実質</span>
+            <span class="stat-value"><span class="num">20</span>万円〜</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-label">最短</span>
+            <span class="stat-value"><span class="num">3</span>日で制作</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-label">最大</span>
+            <span class="stat-value"><span class="num">70</span>%助成</span>
+          </div>
+        </div>
+        <div class="hero-cta-wrap">
+          <a href="#" class="cta-orange large">無料相談する<span class="arrow">→</span></a>
+          <p class="note">自社で内製化できるか、まずはお気軽にご相談ください。</p>
+        </div>
       </div>
-      <p class="hero-sub">AIで作れる時代の、新しい選び方。<br>3日間の研修で、自社のWEBを社内で動かせる体制へ。</p>
-      <div class="hero-cta-wrap">
-        <a href="#" class="cta-orange large">無料相談する<span class="arrow">→</span></a>
-        <p class="note">自社で内製化できるか、まずはお気軽にご相談ください。</p>
+      <div class="hero-visual">
+        <img src="./assets/hero-visual.svg" alt="AIでホームページ制作を内製化するイメージ">
       </div>
     </div>
   </div>

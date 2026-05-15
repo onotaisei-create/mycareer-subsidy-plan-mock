@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120" role="img" aria-label="ホームページ内製化くん">
+  <defs>
+    <linearGradient id="logoDeep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3FA4E0"/>
+      <stop offset="100%" stop-color="#003F7A"/>
+    </linearGradient>
+    <linearGradient id="logoLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6FC1EC"/>
+      <stop offset="100%" stop-color="#1A8FD4"/>
+    </linearGradient>
+  </defs>
+  <g font-family="'Hiragino Sans','Yu Gothic UI','Yu Gothic','Noto Sans JP','Meiryo',sans-serif" font-weight="900" font-style="italic">
+    <text x="14" y="48" font-size="36" fill="url(#logoLight)" letter-spacing="-0.5">ホームページ</text>
+    <text x="200" y="98" font-size="68" fill="url(#logoDeep)" letter-spacing="-2">内製化</text>
+    <text x="430" y="103" font-size="26" fill="#1A8FD4">くん</text>
+  </g>
+</svg>
