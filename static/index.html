@@ -17,18 +17,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --primary:#0091E0;       /* main brand blue */
+  --primary:#0091E0;
   --primary-dark:#0078BD;
-  --primary-soft:#E6F4FB;  /* very light blue bg */
-  --primary-light:#C5E5F5; /* highlight tint */
+  --primary-soft:#E6F4FB;
+  --primary-light:#C5E5F5;
   --primary-mid:#5FB8E8;
   --navy:#0A2540;
-  --orange:#FF6B00;        /* CTA ONLY */
+  --orange:#FF6B00;
   --orange-dark:#E55F00;
   --ink:#1A1A1A;
   --ink-sub:#5A6471;
   --line:#E5E7EB;
   --bg-soft:#F7F9FC;
+
+  /* Section pastels */
+  --bg-cream:#FFF8F0;
+  --bg-cyan:#EAF4F8;
+  --bg-mint:#EEF6F0;
+  --bg-lavender:#F2EEFB;
+  --bg-blue:#EEF4FA;
+  --bg-peach:#FDF1ED;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{font-size:62.5%;scroll-behavior:smooth}
@@ -41,6 +49,12 @@ a{color:inherit;text-decoration:none}
 .container{max-width:1120px;margin:0 auto;padding:0 24px}
 .section{padding:88px 0}
 .section.alt{background:var(--bg-soft)}
+.section.bg-cream{background:var(--bg-cream)}
+.section.bg-cyan{background:var(--bg-cyan)}
+.section.bg-mint{background:var(--bg-mint)}
+.section.bg-lavender{background:var(--bg-lavender)}
+.section.bg-blue{background:var(--bg-blue)}
+.section.bg-peach{background:var(--bg-peach)}
 .sec-head{text-align:center;margin:0 0 48px}
 .sec-head .eng{display:block;font-family:"Inter",sans-serif;font-size:1.15rem;font-weight:600;letter-spacing:0.32em;color:var(--primary);text-transform:uppercase;margin:0 0 12px}
 .sec-head h2{font-size:3.2rem;font-weight:700;margin:0;line-height:1.5;letter-spacing:-0.02em;color:var(--navy)}
@@ -71,36 +85,33 @@ a{color:inherit;text-decoration:none}
   .header .cta-orange{font-size:1.2rem;padding:9px 16px}
 }
 
-/* ========== Hero ========== */
-.hero{background:linear-gradient(180deg,var(--primary-soft) 0%,#fff 100%);padding:64px 0 0;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;top:-200px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,145,224,0.10) 0%,transparent 70%);z-index:0}
-.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1.5px solid var(--primary);color:var(--primary);font-weight:700;font-size:1.2rem;padding:6px 14px;border-radius:100px;margin:0 0 16px}
-.hero-badge::before{content:"●";font-size:0.7em}
-.hero h1{font-size:4.4rem;font-weight:700;line-height:1.4;letter-spacing:-0.025em;margin:0 0 28px;color:var(--navy)}
-.hero h1 .hl{background:linear-gradient(transparent 62%,var(--primary-light) 62%);padding:0 4px}
-.hero h1 .accent{color:var(--primary);font-weight:800}
-.hero .pills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
-.hero .pill{display:inline-block;background:#fff;border:1px solid var(--primary-light);font-weight:700;font-size:1.3rem;padding:7px 16px;border-radius:100px;white-space:nowrap;line-height:1.6}
-.hero .pill .pill-num{color:var(--primary);font-family:"Inter",sans-serif;font-weight:800;font-size:1.1em;margin:0 1px;vertical-align:baseline}
-.hero-sub{color:var(--ink-sub);font-size:1.4rem;line-height:1.85;margin:0 0 24px}
-.hero-img{aspect-ratio:16/9;border-radius:20px;overflow:hidden;display:block;background:transparent}
-.hero-img img{width:100%;height:100%;object-fit:cover;display:block}
-@media (max-width:959px){.hero-img{aspect-ratio:16/10;max-width:640px;margin:0 auto}}
-.hero-cta-area{margin-top:48px;padding:32px 0 64px;text-align:center}
-.hero-cta-area .note{color:var(--ink-sub);font-size:1.2rem;margin-top:12px}
+/* ========== Hero (Image BG + Centered Text) ========== */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;text-align:center;padding:140px 24px 100px;overflow:hidden;color:#fff}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1A3556 0%,#2C5282 50%,#0F2540 100%);background-image:url("./assets/hero-bg.jpg"),linear-gradient(135deg,#1A3556 0%,#2C5282 50%,#0F2540 100%);background-size:cover;background-position:center;z-index:0}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,37,64,0.45) 0%,rgba(10,37,64,0.65) 100%)}
+.hero .container{position:relative;z-index:1}
+.hero-inner{max-width:880px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.30);color:#fff;font-weight:600;font-size:1.2rem;padding:7px 18px;border-radius:100px;margin:0 0 28px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hero-badge::before{content:"●";font-size:0.7em;color:#FFB36B}
+.hero h1{font-size:5.2rem;font-weight:700;line-height:1.4;letter-spacing:-0.025em;margin:0 0 28px;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,0.30)}
+.hero h1 .hl{background:linear-gradient(transparent 62%,rgba(255,179,107,0.6) 62%);padding:0 4px}
+.hero h1 .accent{background:linear-gradient(135deg,#FFD37A 0%,#FF9C42 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+.hero .pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 32px;justify-content:center}
+.hero .pill{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.30);font-weight:600;font-size:1.35rem;padding:8px 18px;border-radius:100px;white-space:nowrap;line-height:1.6;color:#fff;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hero .pill .pill-num{color:#FFD37A;font-family:"Inter",sans-serif;font-weight:800;font-size:1.1em;margin:0 1px;vertical-align:baseline}
+.hero-sub{color:rgba(255,255,255,0.92);font-size:1.55rem;line-height:1.85;margin:0 0 40px;text-shadow:0 1px 12px rgba(0,0,0,0.25)}
+.hero-cta-wrap{margin-top:8px}
+.hero-cta-wrap .note{color:rgba(255,255,255,0.78);font-size:1.25rem;margin-top:14px}
 @media (max-width:959px){
-  .hero{padding:40px 0 0}
-  .hero-grid{grid-template-columns:1fr;gap:24px}
-  .hero h1{font-size:3rem;line-height:1.45}
-  .hero-img{aspect-ratio:16/10;max-width:640px;margin:0 auto}
+  .hero{min-height:72vh;padding:100px 20px 72px}
+  .hero h1{font-size:3.4rem;line-height:1.45}
+  .hero-sub{font-size:1.4rem}
 }
 @media (max-width:559px){
+  .hero{min-height:auto;padding:80px 16px 60px}
   .hero h1{font-size:2.6rem;letter-spacing:-0.02em}
-  .hero .pills{justify-content:center}
-  .hero .pill{font-size:1.2rem;padding:6px 12px}
+  .hero .pill{font-size:1.2rem;padding:6px 14px}
   .hero-sub{font-size:1.3rem}
-  .hero-cta-area{margin-top:32px;padding:24px 0 48px}
 }
 
 /* ========== Worries ========== */
@@ -315,32 +326,27 @@ a{color:inherit;text-decoration:none}
 
 <!-- Hero -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="container">
-    <div class="hero-grid">
-      <div>
-        <span class="hero-badge">厚生労働省 人材開発支援助成金 対象</span>
-        <h1>ホームページ制作、<br><span class="accent">社内で完結</span>。</h1>
-        <div class="pills">
-          <span class="pill">実質<span class="pill-num">20</span>万円〜</span>
-          <span class="pill">最短<span class="pill-num">3</span>日で制作</span>
-          <span class="pill">修正し放題</span>
-        </div>
-        <p class="hero-sub">AIで作れる時代の、新しい選び方。<br>3日間の研修で、自社のWEBを社内で動かせる体制へ。</p>
+    <div class="hero-inner" id="contact">
+      <span class="hero-badge">厚生労働省 人材開発支援助成金 対象</span>
+      <h1>ホームページ制作、<br><span class="accent">社内で完結</span>。</h1>
+      <div class="pills">
+        <span class="pill">実質<span class="pill-num">20</span>万円〜</span>
+        <span class="pill">最短<span class="pill-num">3</span>日で制作</span>
+        <span class="pill">修正し放題</span>
       </div>
-      <div class="hero-img">
-        <img src="./assets/hero.png" alt="研修受講者が制作したサンプルLP - Nexa AI">
+      <p class="hero-sub">AIで作れる時代の、新しい選び方。<br>3日間の研修で、自社のWEBを社内で動かせる体制へ。</p>
+      <div class="hero-cta-wrap">
+        <a href="#" class="cta-orange large">無料相談する<span class="arrow">→</span></a>
+        <p class="note">自社で内製化できるか、まずはお気軽にご相談ください。</p>
       </div>
-    </div>
-
-    <div class="hero-cta-area" id="contact">
-      <a href="#" class="cta-orange large">無料相談する<span class="arrow">→</span></a>
-      <p class="note">自社で内製化できるか、まずはお気軽にご相談ください。</p>
     </div>
   </div>
 </section>
 
 <!-- ② よくある悩み -->
-<section class="section alt">
+<section class="section bg-peach">
   <div class="container">
     <div class="sec-head">
       <span class="eng">Worries</span>
@@ -386,7 +392,7 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- ③ サービス説明 -->
-<section class="section">
+<section class="section bg-cyan">
   <div class="container">
     <div class="sec-head">
       <span class="eng">Service</span>
@@ -401,7 +407,7 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- ④ 外注 vs 内製化 比較表 -->
-<section class="section alt">
+<section class="section bg-cream">
   <div class="container">
     <div class="sec-head">
       <span class="eng">Comparison</span>
@@ -445,7 +451,7 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- こんな企業に向いている -->
-<section class="section">
+<section class="section bg-mint">
   <div class="container">
     <div class="sec-head">
       <span class="eng">For Whom</span>
@@ -498,7 +504,7 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- ⑥ 制作事例 -->
-<section class="section">
+<section class="section bg-blue">
   <div class="container">
     <div class="sec-head">
       <span class="eng">Works</span>
@@ -543,7 +549,7 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- ⑦ 講師紹介 -->
-<section class="section alt">
+<section class="section bg-lavender">
   <div class="container">
     <div class="sec-head">
       <span class="eng">Instructor</span>
@@ -571,7 +577,7 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- 受講までの流れ -->
-<section class="section">
+<section class="section bg-cyan">
   <div class="container">
     <div class="sec-head">
       <span class="eng">Process</span>
@@ -604,7 +610,7 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- ⑧ 導入後の未来 -->
-<section class="section">
+<section class="section bg-peach">
   <div class="container">
     <div class="sec-head">
       <span class="eng">Future</span>
