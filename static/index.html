@@ -243,6 +243,25 @@ a{color:inherit;text-decoration:none}
   .faq-answer{padding:0 16px 16px 48px;font-size:1.25rem}
 }
 
+/* ========== Checklist (For Whom) ========== */
+.checklist-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:880px;margin:0 auto}
+.checklist-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;display:flex;align-items:flex-start;gap:14px;transition:all 0.25s cubic-bezier(0.2,0.8,0.2,1)}
+.checklist-item:hover{border-color:var(--primary-light);box-shadow:0 1px 2px rgba(10,37,64,0.04),0 8px 20px rgba(10,37,64,0.05)}
+.checklist-item .check-icon{flex-shrink:0;width:26px;height:26px;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.3rem;font-family:"Inter",sans-serif}
+.checklist-item p{margin:0;font-size:1.4rem;line-height:1.7;color:var(--ink);font-weight:500}
+@media (max-width:768px){.checklist-grid{grid-template-columns:1fr;gap:10px}.checklist-item{padding:14px 18px}.checklist-item p{font-size:1.3rem}}
+
+/* ========== Steps (Process) ========== */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1080px;margin:0 auto}
+.step-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 22px;position:relative;overflow:hidden;transition:all 0.3s cubic-bezier(0.2,0.8,0.2,1)}
+.step-card:hover{transform:translateY(-3px);box-shadow:0 1px 2px rgba(10,37,64,0.04),0 16px 36px rgba(10,37,64,0.08);border-color:var(--primary-light)}
+.step-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary) 0%,var(--primary-mid) 100%)}
+.step-card .step-num{font-family:"Inter",sans-serif;font-weight:800;font-size:1.3rem;color:var(--primary);letter-spacing:0.2em;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+.step-card .step-num::after{content:"";flex:1;height:1px;background:var(--line)}
+.step-card h3{font-size:1.65rem;font-weight:700;margin:0 0 10px;color:var(--navy);line-height:1.5;letter-spacing:-0.005em}
+.step-card p{font-size:1.3rem;line-height:1.85;color:var(--ink-sub);margin:0}
+@media (max-width:768px){.steps-grid{grid-template-columns:1fr;gap:12px}.step-card{padding:22px 20px}}
+
 /* ========== Mini CTA (inline) ========== */
 .mini-cta{text-align:center;padding:48px 24px 0;max-width:720px;margin:0 auto}
 .mini-cta .mini-cta-tagline{font-size:1.5rem;color:var(--ink);margin:0 0 20px;font-weight:700;line-height:1.6}
@@ -425,6 +444,42 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
+<!-- こんな企業に向いている -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eng">For Whom</span>
+      <h2>こんな<mark>企業</mark>に向いています</h2>
+    </div>
+    <div class="checklist-grid">
+      <div class="checklist-item">
+        <div class="check-icon">✓</div>
+        <p>制作会社への外注コストやスピードに課題を感じている</p>
+      </div>
+      <div class="checklist-item">
+        <div class="check-icon">✓</div>
+        <p>社内にWEB制作スキル・ノウハウを蓄積したい</p>
+      </div>
+      <div class="checklist-item">
+        <div class="check-icon">✓</div>
+        <p>助成金を活用して人材育成・DX投資を進めたい</p>
+      </div>
+      <div class="checklist-item">
+        <div class="check-icon">✓</div>
+        <p>採用ページ・LP・コーポレートサイトを内製で運用したい</p>
+      </div>
+      <div class="checklist-item">
+        <div class="check-icon">✓</div>
+        <p>非エンジニアでもWEBを動かせる体制を作りたい</p>
+      </div>
+      <div class="checklist-item">
+        <div class="check-icon">✓</div>
+        <p>AIを「使う」だけでなく「事業に組み込める」人材を育てたい</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ⑤ 助成金インパクト -->
 <section class="impact-section">
   <div class="container">
@@ -461,14 +516,16 @@ a{color:inherit;text-decoration:none}
           <p>制作期間：3日／業種：観光・アクティビティ／株式会社NASH</p>
         </div>
       </a>
-      <div class="example-card">
-        <div class="example-thumb">[ 事例2 サムネイル ]</div>
-        <div class="example-body">
-          <span class="tag">HP</span>
-          <h3>コーポレートサイトリニューアル</h3>
-          <p>制作期間：5日／受講者業種：IT／※プレースホルダー</p>
+      <a href="https://work-talk.jp/hp_top/mycareer" target="_blank" rel="noopener" class="example-card">
+        <div class="example-thumb">
+          <img src="./assets/example-worktalk.jpg" alt="マイキャリア株式会社 コーポレートサイト">
         </div>
-      </div>
+        <div class="example-body">
+          <span class="tag">コーポレートサイト</span>
+          <h3>マイキャリア株式会社 ホームページ</h3>
+          <p>制作期間：3日／業種：人材サービス／マイキャリア株式会社</p>
+        </div>
+      </a>
       <div class="example-card">
         <div class="example-thumb">[ 事例3 サムネイル ]</div>
         <div class="example-body">
@@ -507,7 +564,40 @@ a{color:inherit;text-decoration:none}
           <span>AI共創開発実践</span>
           <span>Claude Code エキスパート</span>
         </div>
-        <p class="bio">非エンジニアの立場からAIで内製化を実現してきた経験を元に、受講者が「自分でもできる」感覚を3日間で持ち帰れるよう設計しています。実務でAIを使い倒している現役の視点から、明日から使える具体的なワークフローをお伝えします。</p>
+        <p class="bio">2009年、関西学院大学卒業後、上場保険代理店に入社。11年半にわたり人事・経理・総務・マーケティング・コンプライアンスなど多様な実務を経験。AI研修事業を主軸に、最新技術を実装に落とし込み企業の変革を加速させている。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 受講までの流れ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eng">Process</span>
+      <h2>受講までの<mark>流れ</mark></h2>
+      <p class="lead">お問い合わせから研修・運用開始まで、最短2〜3週間。助成金申請のサポートも一貫対応します。</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <p class="step-num">STEP 01</p>
+        <h3>無料相談</h3>
+        <p>オンライン30分で課題と目的をヒアリング。助成金の対象可否もこの場で診断します。</p>
+      </div>
+      <div class="step-card">
+        <p class="step-num">STEP 02</p>
+        <h3>プラン設計</h3>
+        <p>受講者・スケジュール・助成金申請の段取りまでまとめてご提案します。</p>
+      </div>
+      <div class="step-card">
+        <p class="step-num">STEP 03</p>
+        <h3>3日間研修</h3>
+        <p>Claude Code × Next.js で、自社サイトのプロトタイプを実際に作りながら学びます。</p>
+      </div>
+      <div class="step-card">
+        <p class="step-num">STEP 04</p>
+        <h3>公開・運用</h3>
+        <p>研修終了時には公開可能。以降は社内で更新・新規LP制作を完結できる体制に。</p>
       </div>
     </div>
   </div>
